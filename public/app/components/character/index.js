@@ -6,7 +6,7 @@ var Attribute;
     Attribute["name"] = "name";
     Attribute["image"] = "image";
 })(Attribute = exports.Attribute || (exports.Attribute = {}));
-class MyProfile extends HTMLElement {
+class character extends HTMLElement {
     static get observedAttributes() {
         const attrs = {
             image: null,
@@ -36,12 +36,12 @@ class MyProfile extends HTMLElement {
             this.shadowRoot.innerHTML = `
                 <link rel="stylesheet" href="./app/components/profile/profile.css">
                 <section>
-                <h1>${this.name}</h1>
                 <img src=${this.image}/>
+                <h1>${this.name}</h1>
                 </section>
                 `;
         }
     }
 }
-customElements.define("my-profile", MyProfile);
-exports.default = MyProfile;
+customElements.define("my-profile", character);
+exports.default = character;

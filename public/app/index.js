@@ -14,7 +14,7 @@ class AppContainer extends HTMLElement {
         charactersdata_js_1.default.forEach((user) => {
             const profileCard = this.ownerDocument.createElement("my-profile");
             profileCard.setAttribute(index_js_1.Attribute.name, user.name);
-            profileCard.addEventListener("click", () => console.log(user.name));
+            profileCard.setAttribute(index_js_1.Attribute.image, user.image);
             this.profiles.push(profileCard);
         });
     }
