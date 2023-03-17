@@ -39,17 +39,19 @@ class navbar extends HTMLElement {
             this.shadowRoot.innerHTML = `
                 <div class"content">
             <nav class="navbar">
-                <a href="#" class="navbar-brand"><img class="Rima" src="https://1000marcas.net/wp-content/uploads/2021/04/Reddit-logo.png" alt=""></a>
+                <a href="#" class="navbar-brand"><img class="Rima" src="https://yt3.googleusercontent.com/ytc/AL5GRJXQ_ZwqS4HKyKWBfrsKocRrtsqfQG_0fTTphtlzVw=s900-c-k-c0x00ffffff-no-rj" alt=""></a>
                 <div class="navbar-search">
                 <form>
-                    <input type="text" placeholder="Busca en Reddit">
+                    <input type="text" placeholder="Search Games, Hardware,news,etc">
                     <button type="submit">Buscar</button>
                 </form>
                 </div>
                 <div class="navbar-menu">
                 <ul>
-                    <li><button><a href="#">Registrarse</a></button></li>
-                    <li><button><a href="#">Iniciar sesión</a></button></li>
+                    <li><button><a href="#">Support</a></button></li>
+                    <li><button><a href="#">Wish List</a></button></li>
+                    <li><button><a href="#">Cart</a></button></li>
+                    <li><button><a href="#">Log in/Sing in </a></button></li>
                     <li><a href="#">Configuración</a></li>
                 </ul>
                 </div>
