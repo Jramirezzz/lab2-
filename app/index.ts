@@ -1,7 +1,9 @@
 import * as components from "./components/index.js";
 // import "./components/index.js";
-import data from "./data.js";
-import MyProfile, { Attribute } from "./components/profile/index.js";
+import data from "./charactersdata.js";
+import dbsdata from "./dbs.js"
+
+import MyProfile, { Attribute } from "./components/character/index.js";
 
 class AppContainer extends HTMLElement {
     profiles: MyProfile[] = [];
@@ -9,13 +11,12 @@ class AppContainer extends HTMLElement {
     constructor() {
         super();
         this.attachShadow({ mode: "open" });
+
         data.forEach((user) => {
             const profileCard = this.ownerDocument.createElement(
                 "my-profile"
                 ) as MyProfile;
                 profileCard.setAttribute(Attribute.name, user.name);
-                // profileCard.setAttribute(Attribute.uid, String(user.id));
-                // profileCard.setAttribute(Attribute.city, user.address.city);
                 profileCard.addEventListener("click", () => console.log(user.name));
                 this.profiles.push(profileCard);
             });

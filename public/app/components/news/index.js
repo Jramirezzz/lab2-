@@ -3,14 +3,16 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.Attribute = void 0;
 var Attribute;
 (function (Attribute) {
-    Attribute["name"] = "name";
+    Attribute["titulo"] = "titulo";
     Attribute["image"] = "image";
+    Attribute["description"] = "description";
 })(Attribute = exports.Attribute || (exports.Attribute = {}));
-class MyProfile extends HTMLElement {
+class news extends HTMLElement {
     static get observedAttributes() {
         const attrs = {
             image: null,
-            name: null,
+            titulo: null,
+            description: null,
         };
         return Object.keys(attrs);
     }
@@ -36,12 +38,14 @@ class MyProfile extends HTMLElement {
             this.shadowRoot.innerHTML = `
                 <link rel="stylesheet" href="./app/components/profile/profile.css">
                 <section>
-                <h1>${this.name}</h1>
-                <img src=${this.image}/>
+                <h1>News</h1>
+                <img src=${this.image}>
+                <p>${this.titulo}</p>
+                <p>${this.description}</p>
                 </section>
                 `;
         }
     }
 }
-customElements.define("my-profile", MyProfile);
-exports.default = MyProfile;
+customElements.define("my-news", news);
+exports.default = news;

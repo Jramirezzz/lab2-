@@ -3,14 +3,16 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.Attribute = void 0;
 var Attribute;
 (function (Attribute) {
-    Attribute["name"] = "name";
+    Attribute["price"] = "price";
     Attribute["image"] = "image";
+    Attribute["titulo"] = "titulo";
 })(Attribute = exports.Attribute || (exports.Attribute = {}));
-class MyProfile extends HTMLElement {
+class bests extends HTMLElement {
     static get observedAttributes() {
         const attrs = {
             image: null,
-            name: null,
+            price: null,
+            titulo: null,
         };
         return Object.keys(attrs);
     }
@@ -23,7 +25,8 @@ class MyProfile extends HTMLElement {
     }
     attributeChangedCallback(propName, _, newValue) {
         switch (propName) {
-            case Attribute.image:
+            case Attribute.price:
+                this.price = newValue ? Number(newValue) : undefined;
                 break;
             default:
                 this[propName] = newValue;
@@ -36,12 +39,13 @@ class MyProfile extends HTMLElement {
             this.shadowRoot.innerHTML = `
                 <link rel="stylesheet" href="./app/components/profile/profile.css">
                 <section>
-                <h1>${this.name}</h1>
-                <img src=${this.image}/>
+                <img src="${this.image}">
+                <h2>${this.titulo}</h2>
+                <p>${this.price}</p>
                 </section>
                 `;
         }
     }
 }
-customElements.define("my-profile", MyProfile);
-exports.default = MyProfile;
+customElements.define("best-seller", bests);
+exports.default = bests;

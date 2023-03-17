@@ -1,47 +1,61 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.Attribute = void 0;
-var Attribute;
-(function (Attribute) {
-    Attribute["name"] = "name";
-    Attribute["image"] = "image";
-})(Attribute = exports.Attribute || (exports.Attribute = {}));
+export enum Attribute {
+    "name" = "name",
+    "image" = "image",
+    
+}
+
 class MyProfile extends HTMLElement {
+    name?: string;
+
+    image?: string;
+    
     static get observedAttributes() {
-        const attrs = {
+        const attrs: Record<Attribute, null> = {
+        
             image: null,
             name: null,
         };
         return Object.keys(attrs);
     }
+    
     constructor() {
         super();
         this.attachShadow({ mode: "open" });
     }
+    
     connectedCallback() {
         this.render();
     }
-    attributeChangedCallback(propName, _, newValue) {
-        switch (propName) {
-            case Attribute.image:
+    
+    attributeChangedCallback(
+        propName: Attribute,
+        _: string | undefined,
+        newValue: string | undefined
+        ) {
+            switch (propName) {
+                case Attribute.image:
                 break;
-            default:
+                
+                default:
                 this[propName] = newValue;
                 break;
+            }
+            
+            this.render();
         }
-        this.render();
-    }
-    render() {
-        if (this.shadowRoot) {
-            this.shadowRoot.innerHTML = `
+        
+        render() {
+            if (this.shadowRoot) {
+                this.shadowRoot.innerHTML = `
                 <link rel="stylesheet" href="./app/components/profile/profile.css">
                 <section>
                 <h1>${this.name}</h1>
                 <img src=${this.image}/>
                 </section>
                 `;
+            }
         }
     }
-}
+    
 customElements.define("my-profile", MyProfile);
-exports.default = MyProfile;
+export default MyProfile;

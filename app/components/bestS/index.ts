@@ -1,19 +1,21 @@
 export enum Attribute {
-    "name" = "name",
-    "uid" = "uid",
-    "city" = "city",
+    "price" = "price",
+    "image" = "image",
+    "titulo" = "titulo"
+
 }
 
-class MyProfile extends HTMLElement {
-    name?: string;
-    uid?: number;
-    city?: string;
+class bests extends HTMLElement {
+    price?: number;
+    image?: string;
+    titulo?: string;
     
     static get observedAttributes() {
         const attrs: Record<Attribute, null> = {
-            city: null,
-            uid: null,
-            name: null,
+        
+            image: null,
+            price: null,
+            titulo: null,
         };
         return Object.keys(attrs);
     }
@@ -33,8 +35,8 @@ class MyProfile extends HTMLElement {
         newValue: string | undefined
         ) {
             switch (propName) {
-                case Attribute.uid:
-                this.uid = newValue ? Number(newValue) : undefined;
+                case Attribute.price:
+                    this.price =newValue ? Number(newValue) : undefined;
                 break;
                 
                 default:
@@ -50,14 +52,14 @@ class MyProfile extends HTMLElement {
                 this.shadowRoot.innerHTML = `
                 <link rel="stylesheet" href="./app/components/profile/profile.css">
                 <section>
-                <h1>${this.name}</h1>
-                <p>ID for one of our users: ${this.uid}</p>
-                <span><strong>From:${this.city}</strong><span>
+                <img src="${this.image}">
+                <h2>${this.titulo}</h2>
+                <p>${this.price}</p>
                 </section>
                 `;
             }
         }
     }
     
-customElements.define("my-profile", MyProfile);
-export default MyProfile;
+customElements.define("best-seller", bests);
+export default bests;
