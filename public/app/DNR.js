@@ -1,5 +1,3 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 const DNRdata = [
     {
         image: "https://i0.wp.com/news.xbox.com/en-us/wp-content/uploads/sites/2/2023/03/Fatal-Frame-Mask-of-the-Lunar-Eclipse_2022_12-13-22_020-28459fad50d27ebbbc25.jpg?fit=1920%2C1080&ssl=1",
@@ -82,4 +80,4 @@ const DNRdata = [
         price: "$14.99",
     },
 ];
-exports.default = DNRdata;
+export default DNRdata;

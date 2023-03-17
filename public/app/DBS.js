@@ -1,5 +1,3 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 const dbsdata = [
     {
         image: "https://assets.nintendo.com/image/upload/c_fill,w_1200/q_auto:best/f_auto/dpr_2.0/ncom/software/switch/70010000063709/32b85837beea0eee31220a59e247219662de4011f7a8c18fce61cf99a4933eb7",
@@ -82,4 +80,4 @@ const dbsdata = [
         price: "$9.99",
     },
 ];
-exports.default = dbsdata;
+export default dbsdata;

@@ -54,7 +54,7 @@ class navbar extends HTMLElement {
                 <div class="navbar-search">
                 <form>
                     <input type="text" placeholder="Search Games, Hardware,news,etc">
-                    <button type="submit">Buscar</button>
+                    
                 </form>
                 </div>
                 <div class="navbar-menu">

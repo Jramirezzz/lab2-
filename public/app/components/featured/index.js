@@ -1,11 +1,8 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.propiedad = void 0;
-var propiedad;
+export var propiedad;
 (function (propiedad) {
     propiedad["titulo"] = "titulo";
     propiedad["image"] = "image";
-})(propiedad = exports.propiedad || (exports.propiedad = {}));
+})(propiedad || (propiedad = {}));
 class featured extends HTMLElement {
     static get observedAttributes() {
         const attrs = {
@@ -44,4 +41,4 @@ class featured extends HTMLElement {
     }
 }
 customElements.define("my-featured", featured);
-exports.default = featured;
+export default featured;

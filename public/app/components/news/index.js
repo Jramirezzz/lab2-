@@ -1,12 +1,9 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.propi = void 0;
-var propi;
+export var propi;
 (function (propi) {
     propi["titulo"] = "titulo";
     propi["image"] = "image";
     propi["description"] = "description";
-})(propi = exports.propi || (exports.propi = {}));
+})(propi || (propi = {}));
 class news extends HTMLElement {
     static get observedAttributes() {
         const attrs = {
@@ -48,4 +45,4 @@ class news extends HTMLElement {
     }
 }
 customElements.define("my-news", news);
-exports.default = news;
+export default news;

@@ -1,12 +1,9 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.prop = void 0;
-var prop;
+export var prop;
 (function (prop) {
     prop["price"] = "price";
     prop["image"] = "image";
     prop["titulo"] = "titulo";
-})(prop = exports.prop || (exports.prop = {}));
+})(prop || (prop = {}));
 class dnr extends HTMLElement {
     static get observedAttributes() {
         const attrs = {
@@ -48,4 +45,4 @@ class dnr extends HTMLElement {
     }
 }
 customElements.define("digital-new", dnr);
-exports.default = dnr;
+export default dnr;

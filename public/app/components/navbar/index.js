@@ -1,12 +1,9 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.Attribute = void 0;
-var Attribute;
+export var Attribute;
 (function (Attribute) {
     Attribute["name"] = "name";
     Attribute["uid"] = "uid";
     Attribute["city"] = "city";
-})(Attribute = exports.Attribute || (exports.Attribute = {}));
+})(Attribute || (Attribute = {}));
 class navbar extends HTMLElement {
     static get observedAttributes() {
         const attrs = {
@@ -43,7 +40,7 @@ class navbar extends HTMLElement {
                 <div class="navbar-search">
                 <form>
                     <input type="text" placeholder="Search Games, Hardware,news,etc">
-                    <button type="submit">Buscar</button>
+                    
                 </form>
                 </div>
                 <div class="navbar-menu">
@@ -63,4 +60,4 @@ class navbar extends HTMLElement {
     }
 }
 customElements.define("nav-bar", navbar);
-exports.default = navbar;
+export default navbar;

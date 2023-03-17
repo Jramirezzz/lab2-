@@ -1,5 +1,3 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 const Featureddata = [
     {
         image: "https://scarletviolet.pokemon.com/images/meta/en/share-fb.jpg",
@@ -34,4 +32,4 @@ const Featureddata = [
         title: "Rocket League—Learn more",
     },
 ];
-exports.default = Featureddata;
+export default Featureddata;

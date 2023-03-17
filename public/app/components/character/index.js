@@ -1,11 +1,8 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.Attribute = void 0;
-var Attribute;
+export var Attribute;
 (function (Attribute) {
     Attribute["name"] = "name";
     Attribute["image"] = "image";
-})(Attribute = exports.Attribute || (exports.Attribute = {}));
+})(Attribute || (Attribute = {}));
 class character extends HTMLElement {
     static get observedAttributes() {
         const attrs = {
@@ -42,4 +39,4 @@ class character extends HTMLElement {
     }
 }
 customElements.define("my-profile", character);
-exports.default = character;
+export default character;

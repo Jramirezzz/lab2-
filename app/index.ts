@@ -1,11 +1,9 @@
-import * as components from "./components/index.js";
-// import "./components/index.js";
+import "./components/index.js";
 import dbsdata from "./dbs.js"
 import Charactersdata from "./charactersdata.js"
 import DNRdata from "./dnr.js"
 import Featureddata from "./featured.js"
 import Newsdata from "./news.js"
-
 
 import character, { Attribute } from "./components/character/index.js";
 import featured, { propiedad } from "./components/featured/index.js";
@@ -33,6 +31,7 @@ class AppContainer extends HTMLElement {
                     ) as character;
                     profileCard.setAttribute(Attribute.name, user.name);
                     profileCard.setAttribute(Attribute.image, user.image);
+                    
                     this.character.push(profileCard);
                 });
 
@@ -61,14 +60,16 @@ class AppContainer extends HTMLElement {
                     ) as dnr;
                      target.setAttribute(prop.titulo, person.title);
                      target.setAttribute(prop.image, person.image);
+                     target.setAttribute(prop.price, person.price);
                      this.dnr.push(target);
                  });
             Newsdata.forEach((person) => {
                 const persons = this.ownerDocument.createElement(
-                    "digital-new"
+                    "my-news"
                     ) as news;
                      persons.setAttribute(propi.titulo, person.title);
                      persons.setAttribute(propi.image, person.image);
+                     persons.setAttribute(propi.description, person.description);
                     this.news.push(persons);
                 });
                  

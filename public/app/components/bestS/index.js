@@ -1,12 +1,9 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.attribute = void 0;
-var attribute;
+export var attribute;
 (function (attribute) {
     attribute["price"] = "price";
     attribute["image"] = "image";
     attribute["titulo"] = "titulo";
-})(attribute = exports.attribute || (exports.attribute = {}));
+})(attribute || (attribute = {}));
 class bests extends HTMLElement {
     static get observedAttributes() {
         const attrs = {
@@ -48,4 +45,4 @@ class bests extends HTMLElement {
     }
 }
 customElements.define("best-seller", bests);
-exports.default = bests;
+export default bests;
