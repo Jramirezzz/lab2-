@@ -1,4 +1,4 @@
-export enum Attribute {
+export enum attribute {
     "price" = "price",
     "image" = "image",
     "titulo" = "titulo"
@@ -11,7 +11,7 @@ class bests extends HTMLElement {
     titulo?: string;
     
     static get observedAttributes() {
-        const attrs: Record<Attribute, null> = {
+        const attrs: Record<attribute, null> = {
         
             image: null,
             price: null,
@@ -30,12 +30,12 @@ class bests extends HTMLElement {
     }
     
     attributeChangedCallback(
-        propName: Attribute,
+        propName: attribute,
         _: string | undefined,
         newValue: string | undefined
         ) {
             switch (propName) {
-                case Attribute.price:
+                case attribute.price:
                     this.price =newValue ? Number(newValue) : undefined;
                 break;
                 

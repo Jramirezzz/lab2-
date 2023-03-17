@@ -1,12 +1,12 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Attribute = void 0;
-var Attribute;
-(function (Attribute) {
-    Attribute["price"] = "price";
-    Attribute["image"] = "image";
-    Attribute["titulo"] = "titulo";
-})(Attribute = exports.Attribute || (exports.Attribute = {}));
+exports.attribute = void 0;
+var attribute;
+(function (attribute) {
+    attribute["price"] = "price";
+    attribute["image"] = "image";
+    attribute["titulo"] = "titulo";
+})(attribute = exports.attribute || (exports.attribute = {}));
 class bests extends HTMLElement {
     static get observedAttributes() {
         const attrs = {
@@ -25,7 +25,7 @@ class bests extends HTMLElement {
     }
     attributeChangedCallback(propName, _, newValue) {
         switch (propName) {
-            case Attribute.price:
+            case attribute.price:
                 this.price = newValue ? Number(newValue) : undefined;
                 break;
             default:

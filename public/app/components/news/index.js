@@ -1,12 +1,12 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Attribute = void 0;
-var Attribute;
-(function (Attribute) {
-    Attribute["titulo"] = "titulo";
-    Attribute["image"] = "image";
-    Attribute["description"] = "description";
-})(Attribute = exports.Attribute || (exports.Attribute = {}));
+exports.propi = void 0;
+var propi;
+(function (propi) {
+    propi["titulo"] = "titulo";
+    propi["image"] = "image";
+    propi["description"] = "description";
+})(propi = exports.propi || (exports.propi = {}));
 class news extends HTMLElement {
     static get observedAttributes() {
         const attrs = {
@@ -25,7 +25,7 @@ class news extends HTMLElement {
     }
     attributeChangedCallback(propName, _, newValue) {
         switch (propName) {
-            case Attribute.image:
+            case propi.image:
                 break;
             default:
                 this[propName] = newValue;

@@ -1,4 +1,4 @@
-export enum Attribute {
+export enum propi {
     "titulo" = "titulo",
     "image" = "image",
     "description" = "description",
@@ -11,7 +11,7 @@ class news extends HTMLElement {
     description?: string;
     
     static get observedAttributes() {
-        const attrs: Record<Attribute, null> = {
+        const attrs: Record<propi, null> = {
         
             image: null,
             titulo: null,
@@ -30,12 +30,12 @@ class news extends HTMLElement {
     }
     
     attributeChangedCallback(
-        propName: Attribute,
+        propName: propi,
         _: string | undefined,
         newValue: string | undefined
         ) {
             switch (propName) {
-                case Attribute.image:
+                case propi.image:
                 break;
                 
                 default:

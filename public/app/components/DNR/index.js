@@ -1,16 +1,18 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Attribute = void 0;
-var Attribute;
-(function (Attribute) {
-    Attribute["name"] = "name";
-    Attribute["image"] = "image";
-})(Attribute = exports.Attribute || (exports.Attribute = {}));
-class character extends HTMLElement {
+exports.prop = void 0;
+var prop;
+(function (prop) {
+    prop["price"] = "price";
+    prop["image"] = "image";
+    prop["titulo"] = "titulo";
+})(prop = exports.prop || (exports.prop = {}));
+class dnr extends HTMLElement {
     static get observedAttributes() {
         const attrs = {
             image: null,
-            name: null,
+            price: null,
+            titulo: null,
         };
         return Object.keys(attrs);
     }
@@ -23,6 +25,9 @@ class character extends HTMLElement {
     }
     attributeChangedCallback(propName, _, newValue) {
         switch (propName) {
+            case prop.price:
+                this.price = newValue ? Number(newValue) : undefined;
+                break;
             default:
                 this[propName] = newValue;
                 break;
@@ -34,12 +39,13 @@ class character extends HTMLElement {
             this.shadowRoot.innerHTML = `
                 <link rel="stylesheet" href="./app/components/profile/profile.css">
                 <section>
-                <img src=${this.image}/>
-                <h1>${this.name}</h1>
+                <img src="${this.image}">
+                <h2>${this.titulo}</h2>
+                <p>${this.price}</p>
                 </section>
                 `;
         }
     }
 }
-customElements.define("my-profile", character);
-exports.default = character;
+customElements.define("digital-new", dnr);
+exports.default = dnr;
